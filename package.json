@@ -1,0 +1,11 @@
+{
+  "name": "webframeworks-ng-express",
+  "version": "1.0.0",
+  "description": "WebFrameworks AngularJS 1.x + Express Quickstart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeado Ko",
+  "license": "MIT"
+}
