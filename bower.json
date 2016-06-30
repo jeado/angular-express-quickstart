@@ -1,0 +1,23 @@
+{
+  "name": "webframeworks-ng-express",
+  "description": "WebFrameworks AngularJS 1.x + Express Quickstart",
+  "main": "index.js",
+  "authors": [
+    "Jeado Ko"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "2.2.4",
+    "angular": "^1.5.7"
+  }
+}
