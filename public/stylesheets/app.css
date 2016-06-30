@@ -1,0 +1,212 @@
+body {
+  padding-top: 43px;
+  background-color: #fafafa;
+}
+
+.container-fluid {
+    max-width: 950px;
+}
+nav.navbar {
+    background-color: #db4c3f;
+    border-bottom: solid 1px #ca2100;
+    height: 43px;
+    min-height: 43px;
+}
+
+nav.navbar .navbar-brand{
+    height: 43px;
+    padding: 10px  15px;
+    font-size: 16px;
+    color: white;
+}
+
+.sidebar {
+    padding-top: 24px;
+    border-right: 1px solid #f1f1f1;
+}
+
+.sidebar .list-group-item {
+    border: 0px;
+    background: none;
+}
+
+.sidebar .list-group-item.active {
+    background-color: #fff;
+    color: #303333;
+}
+
+.sidebar .list-group-item .badge {
+    color: #b3b3b3;
+}
+.sidebar .nav-tabs {
+    margin-bottom: 20px;
+}
+.sidebar .nav-tabs>li {
+    float: left;
+    margin-bottom: -2px;
+}
+
+.sidebar .nav-tabs>li>a {
+    width: 70px;
+    text-align: center;
+    color: #9a9a9a;
+    padding: 0 5px 5px 2px;
+}
+
+.sidebar .nav-tabs>li>a:hover {
+    background-color: unset;
+    border: none;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+.sidebar .nav-tabs>li.active>a {
+    background-color: #fafafa;
+    border: none;
+    margin-top: 0px;
+    border-bottom: solid 1px #737373 !important;
+    font-weight: bold;
+    color: #5c5c5c !important;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #fafafa;
+    border: none;
+    border-bottom: solid 1px #737373 !important;
+    font-weight: bold;
+    color: #5c5c5c !important;
+}
+
+.sidebar .tab-list a {
+    padding: 9px 0 4px 4px;
+    color: #303333;
+    font-size: 14px;
+    line-height: 17px;
+}
+.sidebar .tab-list li {
+    padding: 9px 0 4px 4px;
+}
+
+.main {
+    background-color: #fff;
+    padding: 6px 25px 12px 35px;
+    min-height: 480px;
+    /*padding-top: 30px !important;*/
+    /*margin-left: 269px;*/
+    border-right: 1px solid #f1f1f1;
+  /*padding: 20px;*/
+}
+
+.main .section_header {
+    color: #303333;
+    font-size: 20px !important;
+    font-weight: normal;
+}
+
+.section_header a {
+    color: #303333;
+    font-size: 20px !important;
+    text-decoration: none !important;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.todo-list.list-group {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.todo-list.list-group li.list-group-item {
+    margin-bottom: 0px;
+    /*padding-top: 1px;*/
+    /*padding-bottom: 1px;*/
+    padding: 1px;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.todo-list.list-group label{
+    padding-left: 0px;
+    font-size: 1em;
+    font-weight: 200;
+    color: #303333;
+}
+
+.todo-list.list-group .list-group-item .btn.edit {
+    border: none;
+    color: #a9a9a9;
+}
+
+.todo-list.list-group .list-group-item .btn.edit:hover, .todo-list.list-group .list-group-item .btn.edit:focus {
+    border: none;
+    color: #303333;
+    background-color: unset;
+}
+
+.todo-list.list-group .list-group-item.edit-mode {
+    border-bottom: none;
+}
+
+.add-new-todo .form-group, .edit-new-todo .form-group {
+    margin-bottom: 5px;
+}
+
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    top: 2px;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    /*transform: scale(1) rotateZ(0deg);*/
+    opacity: 0;
+    transition: all .1s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
