@@ -2,3 +2,5 @@ node_modules
 bower_components
 typings
 jsconfig.json
+db.development.sqlite
+.vscode

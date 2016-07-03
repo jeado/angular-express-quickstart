@@ -1,15 +1,20 @@
 var express = require("express"),
-    router = express.Router();
+    router = express.Router(),
+    Project = require("../models").projects;
 
 router.get("/", function(req, res) {
-    var data = { data : [{id:1, name:"work"}]};
-    res.json(data);
+    Project.findAll().then(function (result) {
+      res.json({ data : result });  
+    });
 });
 
 router.get("/:projectId", function(req, res){
     var projectId = parseInt(req.params.projectId);
-    if(projectId === 1) res.json({id:2, name:"work"})
-    else res.status(404).json({message:"not found"});
+    Project.findById(projectId)
+        .then(function (result) {
+            if(result == null) res.status(404).json({message:"not found"});
+            else res.json(result);
+        });
 });
 
 router.get("/:projectId/todos", function(req, res){

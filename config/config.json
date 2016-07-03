@@ -1,0 +1,29 @@
+{
+    "development": {
+        "db" : {
+            "database" : "sqlite",
+            "username" : "",
+            "config" : {
+                "dialect" : "sqlite",
+                "storage" : "./db.development.sqlite"
+
+            }
+        }
+    },
+    "production" : {
+        "db" : {
+            "username": "aylkebjqtbepfj",
+            "password": "9wT3QR6FJCcndWdf8eK9ZeRgp4",
+            "database": "d85gfhgbatt91k",
+            "config" : {
+                "host": "ec2-54-221-253-87.compute-1.amazonaws.com",
+                "dialect": "postgres",
+                "port": 5432,
+                "dialectOptions":{
+                    "native": true,
+                    "ssl": true
+                }
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ describe('GET /projects/:projectId', function () {
         request
             .get('/projects/1')
             .expect(200, {
-                id : 2,
+                id : 1,
                 name : "work"
             }, done)
     });
