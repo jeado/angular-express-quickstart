@@ -37,4 +37,11 @@ describe('project model', function() {
         })
     });
 
+    
+    after(function (done) {
+        sequelize.drop().then(function () {
+            done();
+        });
+    });
+    
 });

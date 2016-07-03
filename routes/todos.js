@@ -1,36 +1,43 @@
 var express = require('express'),
-    router = express.Router();
-
-var memoryDb = {};
+    router = express.Router(),
+    Todo = require("../models").Todo;
 
 router.get('/:todoId', function (req, res) {
     var todoId = req.params.todoId;
-    var todo = memoryDb[todoId];
 
-    if(todo) res.json(todo);
-    else res.status(404).send({message:"no found"});
-})
+    Todo.findById(todoId).then(function (result) {        
+        if(result) res.json(result);
+        else res.status(404).send({message:"not found"});
+    });
+});
 
 router.post('/', function(req, res){
-    var todo = req.body;
-
-    memoryDb[todo.id] = todo;
-
-    res.json(todo);
+    Todo.create(req.body)
+        .then(function (result) {
+            res.json(result);
+        });    
 });
 
 router.put('/:todoId', function(req, res){
-    var todo = req.body;
-    memoryDb[todo.id] = todo;
+    var todoId = req.params.todoId;
 
-    res.json(memoryDb[todo.id]);
+    Todo.update(req.body, {
+        where : {id : todoId}
+    }).then(function (result) {
+        console.log(result[0]);
+        if(result[0] === 0) res.status(404).send({message:"not found"});
+        else res.json({message:"successfully updated"});
+    })
 });
 
 router.delete('/:todoId', function (req, res) {
     var todoId = req.params.todoId;
-    memoryDb[todoId] = null;
-    
-    res.json({message:"successfully deleted"});
+    Todo.destroy({
+            where : {id : todoId}
+        }).then(function (result) {
+            if(result === 0) res.status(404).send({message:"not found"});
+            else res.json({message:"successfully deleted"});
+        });    
 });
 
 module.exports = router;

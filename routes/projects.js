@@ -29,12 +29,11 @@ router.get("/:projectId/todos", function(req, res){
         });
     });
     else Project.find({
-        where : {id:1},
+        where : { id : projectId },
         include: {model: Todo}
     }).then(function (result) {
-        res.json({
-            data : result.Todos
-        });
+        if(result == null) res.status(404).json({message:"No project " + projectId + " found"});
+        else res.json({ data : result.Todos });        
     })
     
 });
