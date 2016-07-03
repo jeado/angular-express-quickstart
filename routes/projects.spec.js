@@ -38,7 +38,7 @@ describe('GET /projects/:projectId/todos', function () {
             .get('/projects/1/todos')
             .expect(200, 
                 { 
-                    data: [{todos : [{ id: 3, done: false, content: "study 2", dueDate: "2012-02-12T 21:00:22z323", priority : 1}]}]
+                    data: [{ id: 1, done: false, content: "implement angularjs demo page", due_date: null, priority : null, project_id: 1}]
                 }, done )
     });
 
@@ -47,7 +47,7 @@ describe('GET /projects/:projectId/todos', function () {
             .get('/projects/*/todos')
             .expect(200, 
                 { 
-                    data: [{todos : [{ id: 1, done: false, content: "study", dueDate: "2012-02-12T 21:00:22z323", priority : 1}]}]
+                    data: [{ id: 1, done: false, content: "implement angularjs demo page", due_date: null, priority : null, project_id: 1}]
                 }, done);
     });
 });

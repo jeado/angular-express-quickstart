@@ -1,18 +1,23 @@
 var db = require(".");
-var Project = db.projects
+var sequelize = db.sequelize;
+var Project = db.Project;
+var Todo = db.Todo;
 
 describe('project model', function() {
     before(function(done) {
-        Project.drop().then(function () {
-            //sync the model with the database
-            Project.sync().then(function() {
-                Project.create({
+        sequelize.sync({force: true}).then(function () {
+            Project.create({
                     name: "work"
-                }).then(function(user) {
-                    done();
+                }).then(function(project) {
+                     Todo.create({
+                        content: "implement angularjs demo page",
+                        done: false,
+                        project_id: project.id
+                    }).then(function(user) {
+                        done();
+                    });
                 });
-            });
-        });        
+        })
     });
 
 
@@ -20,6 +25,16 @@ describe('project model', function() {
         Project.findAll().then(function (result) {
             if(result.length == 1) done();
         });
+    });
+
+    
+    it('should get todo for given project', function (done) {
+        Project.find({
+            where : {id:1},
+            include: {model: Todo}
+        }).then(function (result) {
+            if(result.Todos[0].id == 1) done();
+        })
     });
 
 });
