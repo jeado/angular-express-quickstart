@@ -6,11 +6,13 @@
 1. Node.js
 2. Gulp
 3. Mocha
+4. Bower
 
 ## 실행방법
 
     npm install
     npm start
+    bower install
 
 ## 라이센스
 

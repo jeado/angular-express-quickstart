@@ -7,7 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('express-generator-test:server');
 var http = require('http');
+var models = require('../models');
 
+
+models.sequelize.sync({force:true}).then(function () {
+  models.Project.create({
+    name : "work"
+  });
+});
 /**
  * Get port from environment and store in Express.
  */
