@@ -1,6 +1,6 @@
 <h2 class="section_header">{{Todo.title}}</h2>
 <ul class="list-group todo-list">
-    <li class="list-group-item clearfix edit-mode" ng-repeat="todo in Todo.todos">
+    <li class="list-group-item clearfix" ng-repeat="todo in Todo.todos">
         <todo-editor todo="todo" on-toggle-done="Todo.toggleDone(updated, message)" on-save="Todo.updateTodo(updated)"></todo-editor>        
     </li>
 </ul>
