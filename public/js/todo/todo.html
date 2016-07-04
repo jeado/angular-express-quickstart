@@ -1,26 +1,7 @@
 <h2 class="section_header">{{Todo.title}}</h2>
 <ul class="list-group todo-list">
     <li class="list-group-item clearfix edit-mode" ng-repeat="todo in Todo.todos">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" ng-model="todo.done" ng-click="Todo.toggleDone(todo)">
-                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>    
-                {{todo.content}}
-            </label>
-            <div class="pull-right edit">
-                <button class="btn btn-default btn-xs edit">
-                    <span class="glyphicon glyphicon-option-horizontal"></span>
-                </button>
-            </div>
-        </div>
-        <div class="edit-new-todo">
-            <div class="form-group">
-                <label class="sr-only" for="tasks">New Task</label>
-                <input type="text" class="form-control" id="tasks" placeholder="새로운 할 일 입력">
-            </div>
-            <button class="btn btn-sm btn-danger">Save</button>
-            <button class="btn btn-sm btn-default">cancel</button>
-        </div>            
+        <todo-editor todo="todo" on-toggle-done="Todo.toggleDone(updated, message)" on-save="Todo.updateTodo(updated)"></todo-editor>        
     </li>
 </ul>
 <div class="add-new-todo">
@@ -30,6 +11,3 @@
     </div>
     <button class="btn btn-sm btn-danger" ng-click="Todo.addTodo(Todo.newContent)">Add Task</button>
 </div>
-<!--<div class="right_task_actions">
-    <a href="#"><img src="https://d3ptyyxy2at9ui.cloudfront.net/76084e29cb2cf72b320e888edc583dfb.gif" width="16" height="16" class="cmp_task_actions icon"></a>
-</div>-->

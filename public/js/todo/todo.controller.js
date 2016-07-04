@@ -20,8 +20,8 @@
                         });
                 });
         };
-        
-        vm.toggleDone = function (todo) {
+
+        vm.toggleDone = function (todo, message) {            
             TodoService.updateTodo(todo.id, {
                 done : todo.done
             }).success(function () {
@@ -29,6 +29,20 @@
                 TodoService.getInbox()
                     .success(function (result) {                        
                         vm.todos = result.data;
+                    });
+            });
+        }
+        
+        vm.updateTodo = function (todo) {
+            console.log(todo);       
+            TodoService.updateTodo(todo.id, {
+                done : todo.done,
+                content : todo.content
+            }).success(function () {                
+                TodoService.getInbox()
+                    .success(function (result) {                        
+                        vm.todos = result.data;
+                        todo.edit = false;
                     });
             });
         }

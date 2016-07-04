@@ -1,0 +1,20 @@
+<div class="checkbox" ng-hide="edit">
+    <label>
+        <input type="checkbox" ng-model="todo.done" ng-click="toggleDone({updated:todo,message:'updated!'})">
+        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>    
+        {{todo.content}}
+    </label>
+    <div class="pull-right edit">
+        <button class="btn btn-default btn-xs edit" ng-click="edit=!edit">
+            <span class="glyphicon glyphicon-option-horizontal"></span>
+        </button>
+    </div>
+</div>
+<div class="edit-new-todo" ng-show="edit">
+    <div class="form-group">
+        <label class="sr-only" for="tasks">New Task</label>
+        <input type="text" class="form-control" id="tasks" placeholder="새로운 할 일 입력" ng-model="todo.content">
+    </div>
+    <button class="btn btn-sm btn-danger" ng-click="save({updated:todo})">Save</button>
+    <button class="btn btn-sm btn-default" ng-click="edit=!edit">cancel</button>
+</div>
