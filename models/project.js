@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
         classMethods: {
             associate : function (models) {
                 Project.hasMany(models.Todo, {
-                    foreignKey : "id"
+                    foreignKey : "project_id"
                 })
             }
         }
