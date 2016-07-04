@@ -14,11 +14,8 @@
             return $http.get("projects/*/todos");
         }
         
-        function addTodo(content) {
-            return $http.post("todos", {
-                content : content,
-                done : false
-            });
+        function addTodo(todo) {
+            return $http.post("todos", todo);
         }
 
         function updateTodo(id, todo) {

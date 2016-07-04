@@ -54,9 +54,9 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="project">
                 <ul class="list-unstyled tab-list">
-                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">person</a></li>
-                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">work</a></li>
-                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">shopping</a></li>
+                    <li ng-repeat="project in Shell.projects">
+                      <i class="glyphicon glyphicon-chevron-right"></i><a href="#/projects/{{project.id}}/todos" ng-bind="project.name"></a>
+                    </li>
                 </ul>
             </div>
             <div role="tabpanel" class="tab-pane" id="filter">
@@ -90,6 +90,7 @@
     <script src="js/layout/shell.controller.js"></script>
     <script src="js/todo/todo.controller.js"></script>
     <script src="js/services/todo.service.js"></script>
+    <script src="js/services/project.service.js"></script>
     <script src="js/components/todo-editor.directive.js"></script>
   </body>
 </html>
