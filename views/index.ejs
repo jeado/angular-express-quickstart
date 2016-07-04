@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="todoApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="ShellCtrl">
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -73,70 +73,7 @@
         </div><!-- /.blog-sidebar -->
 
         <div class="col-sm-8 main">
-          <h2 class="section_header">Inbox</h2>
-          <ul class="list-group todo-list">
-              <li class="list-group-item clearfix edit-mode">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                        AngularJS 강의 준비
-                    </label>
-                    <div class="pull-right edit">
-                        <button class="btn btn-default btn-xs edit">
-                            <span class="glyphicon glyphicon-option-horizontal"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="edit-new-todo">
-                    <div class="form-group">
-                        <label class="sr-only" for="tasks">New Task</label>
-                        <input type="text" class="form-control" id="tasks" placeholder="새로운 할 일 입력">
-                    </div>
-                    <button class="btn btn-sm btn-danger">Save</button>
-                    <button class="btn btn-sm btn-default">cancel</button>
-                </div>            
-              </li>
-            <li class="list-group-item clearfix">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                        AngularJS 강의 준비
-                    </label>
-                    <div class="pull-right">
-                        <button class="btn btn-default btn-xs edit">
-                            <span class="glyphicon glyphicon-option-horizontal"></span>
-                        </button>
-                    </div>
-                </div>
-              </li>
-              <li class="list-group-item clearfix">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                        AngularJS 강의 준비
-                    </label>
-                    <div class="pull-right">
-                        <button class="btn btn-default btn-xs edit">
-                            <span class="glyphicon glyphicon-option-horizontal"></span>
-                        </button>
-                    </div>
-                </div>
-              </li>
-            </ul>
-            <div class="add-new-todo">
-              <div class="form-group">
-                <label class="sr-only" for="tasks">New Task</label>
-                <input type="text" class="form-control" id="tasks" placeholder="새로운 할 일 입력">
-              </div>
-              <button class="btn btn-sm btn-danger">Add Task</button>
-            </div>
-            <!--<div class="right_task_actions">
-              <a href="#"><img src="https://d3ptyyxy2at9ui.cloudfront.net/76084e29cb2cf72b320e888edc583dfb.gif" width="16" height="16" class="cmp_task_actions icon"></a>
-            </div>-->
-          </h2>
+          <ng-view></ng-view>
         </div><!-- /.blog-main -->
 
       </div>
@@ -146,5 +83,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="js/app.module.js"></script>
+    <script src="js/app.config.js"></script>
+    <script src="js/layout/shell.controller.js"></script>
+    <script src="js/todo/todo.controller.js"></script>
   </body>
 </html>
