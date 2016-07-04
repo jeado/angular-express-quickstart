@@ -7,8 +7,6 @@
 
     function ShellCtrl(){
         var vm = this;
-
-        console.log("hello");
     }
 
 }());

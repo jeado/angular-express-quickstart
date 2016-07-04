@@ -9,11 +9,28 @@
         $routeProvider
             .when('/inbox', {
                 templateUrl: 'js/todo/todo.html',
-                controller: 'TodoCtrl'
+                controller: 'TodoCtrl',
+                controllerAs: 'Todo',
+                resolve : {
+                    initTodos : function (TodoService) {
+                        return TodoService.getInbox()
+                            .then(function (result) {
+                                return result.data
+                            });
+                    }
+                }
             })
-            .when('/today', {
+            .when('/inbox/today', {
                 templateUrl: 'js/todo/todo.html',
-                controller: 'TodoCtrl'
+                controller: 'TodoCtrl',
+                resolve : {
+                    initTodos : function (TodoService) {
+                        return TodoService.getInbox()
+                            .then(function (result) {
+                                return result.data
+                            });
+                    }
+                }
             })
             .otherwise({
                 redirectTo : '/inbox'

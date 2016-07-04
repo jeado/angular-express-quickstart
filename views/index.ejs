@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-controller="ShellCtrl">
+  <body ng-controller="ShellCtrl as Shell">
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -41,7 +41,7 @@
             <a href="#" class="list-group-item active">
               <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Inbox <span class="badge">4</span>
             </a>
-            <a href="#" class="list-group-item">
+            <a href="#/inbox/today" class="list-group-item">
               <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Today
             </a>
           </div>
@@ -80,7 +80,7 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -89,5 +89,6 @@
     <script src="js/app.config.js"></script>
     <script src="js/layout/shell.controller.js"></script>
     <script src="js/todo/todo.controller.js"></script>
+    <script src="js/services/todo.service.js"></script>
   </body>
 </html>
