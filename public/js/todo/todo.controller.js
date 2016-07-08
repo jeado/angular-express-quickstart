@@ -15,7 +15,7 @@
             TodoService.addTodo({
                 content: content,
                 done: false,
-                project_id : initTodos.project.id    
+                project_id : (initTodos.project) ? initTodos.project.id : null    
             })
                 .success(refresh);
         };
